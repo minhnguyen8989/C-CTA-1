@@ -1,20 +1,35 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int main() {
-    // Fictional person information
-    string firstName = "Minh";
-    string lastName = "Nguyen";
-    string streetAddress = "123 Houston Street";
-    string city = "Houston";
-    int zipCode = 88888;
+    const int MAX_LENGTH = 200;
 
-    // Display the information
-    cout << "First Name: " << firstName << endl;
-    cout << "Last Name: " << lastName << endl;
-    cout << "Street Address: " << streetAddress << endl;
-    cout << "City: " << city << endl;
-    cout << "Zip Code: " << zipCode << endl;
+    char firstString[MAX_LENGTH];
+    char secondString[MAX_LENGTH];
+    char combinedString[MAX_LENGTH];
+
+    cout << "String Combiner Program\n\n";
+
+    for (int i = 1; i <= 3; i++) {
+        cout << "Concatenate #" << i << ":\n";
+
+        cout << "Enter Your First String: ";
+        cin.getline(firstString, MAX_LENGTH);
+
+        cout << "Enter Your Second String: ";
+        cin.getline(secondString, MAX_LENGTH);
+
+        strcpy(combinedString, firstString);
+
+        strcat(combinedString, " ");
+
+        strcat(combinedString, secondString);
+
+        cout << "Combined: " << combinedString << "\n\n";
+    }
+
+    cout << "Done. Goodbye!\n";
 
     return 0;
 }
